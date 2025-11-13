@@ -14,12 +14,20 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         flutter-version: '3.16.0'
+        channel: 'stable'
     
-    - run: flutter pub get
-    - run: flutter build web --release
-    
+    - name: Install dependencies
+      run: |
+        flutter pub get
+        
+    - name: Build web app
+      run: |
+        flutter config --enable-web
+        flutter build web --release
+        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build/web
+        force_orphan: true
