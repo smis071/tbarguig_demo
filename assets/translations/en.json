@@ -1,0 +1,12 @@
+{
+  "app_name": "Tbarguig",
+  "home": "Home",
+  "settings": "Settings",
+  "map": "Map",
+  "messages": "Messages",
+  "profile": "Profile",
+  "like": "Like",
+  "dislike": "Dislike",
+  "poll_true": "True",
+  "poll_false": "False"
+}
